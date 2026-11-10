@@ -12,7 +12,6 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 )
 
-
 // main logs ConfigMap object updates until interrupted.
 // It takes no arguments and returns no values; settings come from the environment.
 func main() {
@@ -53,7 +52,6 @@ func main() {
 	for {
 		select {
 		case <-ctx.Done():
-
 			return
 		case cm := <-updates:
 			// Each notification is a copy of the ConfigMap object.
@@ -65,13 +63,10 @@ func main() {
 
 }
 
-
 // env reads the environment variable named by key.
 // It returns its nonempty value, or fallback when the variable is unset or empty.
 func env(key, fallback string) string {
-
 	if value := os.Getenv(key); value != "" {
-
 		return value
 	}
 

@@ -61,9 +61,7 @@ func main() {
 // env reads the environment variable named by key.
 // It returns its nonempty value, or fallback when the variable is unset or empty.
 func env(key, fallback string) string {
-
 	if value := os.Getenv(key); value != "" {
-
 		return value
 	}
 

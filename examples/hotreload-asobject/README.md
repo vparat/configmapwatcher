@@ -9,7 +9,7 @@ open, so the program listens for context cancellation and calls shutdown on exit
 
 ## Prerequisites
 
-- Go 1.27.3 or later, Bash, and `kubectl`.
+- Go 1.27.4 or later, Bash, and `kubectl`.
 - Access to a Kubernetes cluster through your current kubeconfig context.
 - Permission to create, patch, get, list, and watch ConfigMaps in `default`,
   plus delete permission for cleanup.

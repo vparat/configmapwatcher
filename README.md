@@ -6,7 +6,7 @@ reload application configuration when it changes.
 
 ## Installation
 
-The current `go.mod` declares Go 1.27.3 as the minimum version.  While this code is 
+The current `go.mod` declares Go 1.27.4 as the minimum version.  While this code is 
 compatible with lower versions of Go, the latest is recommended due to the high velocity 
 of CVEs behing exposed by AI.
 
@@ -136,6 +136,10 @@ Each example directory includes a `cleanup.sh` that deletes `default/app-config`
 and succeeds if the ConfigMap is already absent.
 
 ## Local development
+
+Keep `k8s.io/kube-openapi` aligned with the revision required by
+`k8s.io/apimachinery`. Newer revisions can use a different major version of
+`structured-merge-diff`, causing incompatible schema types during compilation.
 
 Each example is a separate Go module with a local replacement:
 
