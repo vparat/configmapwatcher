@@ -19,14 +19,12 @@ type Item struct {
 	ItemsIn  ItemsIn `yaml:"items-in"`
 }
 
-
 type ItemsIn struct {
 	Name      string `yaml:"name"`
 	Namespace string `yaml:"namespace"`
 	CPU       string `yaml:"cpu"`
 	Memory    string `yaml:"memory"`
 }
-
 
 // main unmarshals updates to a ConfigMap Data key and prints the item slice until interrupted.
 // It takes no arguments and returns no values; settings come from the environment.
@@ -75,7 +73,6 @@ func main() {
 
 		if err := yaml.Unmarshal(data, &config); err != nil {
 			log.Printf("unmarshal configuration: %v", err)
-
 			continue
 		}
 
@@ -84,13 +81,10 @@ func main() {
 
 }
 
-
 // env reads the environment variable named by key.
 // It returns its nonempty value, or fallback when the variable is unset or empty.
 func env(key, fallback string) string {
-
 	if value := os.Getenv(key); value != "" {
-
 		return value
 	}
 
